@@ -10,6 +10,31 @@ const packageJson = require('./package.json')
 
 export default [
     {
+        input: 'src/components/base/index.ts',
+        output: [
+            {
+                file: 'base/index.js',
+                format: 'esm',
+                sourcemap: true
+            }
+        ],
+        plugins: [
+            peerDepsExternalPlugin(),
+            resolve(),
+            commonjs(),
+            typescript({ tsconfig: './tsconfig.json' }),
+            postcss({
+                config: {
+                    path: './postcss.config.js'
+                },
+                extensions: ['.css'],
+                extract: false
+            }),
+            terser()
+        ]
+        
+    },
+    {
         input: 'src/index.ts',
         output: [
             {
