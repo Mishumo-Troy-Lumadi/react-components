@@ -5,6 +5,8 @@ import * as widgets from '@library/components/widgets'
 import * as hooks from '@library/hooks/index'
 import * as helpers from '@library/helpers'
 
-export {
-    base, utilities, widgets, hooks, helpers
-}
+module.exports = base
+module.exports = utilities
+module.exports = widgets
+module.exports = hooks
+module.exports = helpers
